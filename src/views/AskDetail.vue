@@ -8,7 +8,9 @@
         </div>
         <span class="time">{{item.closing_date | parseDate}}</span>
     </div>
-    <item-info></item-info>
+    <item-info
+        :item="item"
+    ></item-info>
     <div class="detail">
         <p class="detail-info">{{item.des}}</p>
         <img :src="item.pic" alt="示例图片" class="detail-img">

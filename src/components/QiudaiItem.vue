@@ -1,18 +1,23 @@
 <template>
     <div class="item-wrap" @click="clickBtn">
         <img :src="item.pic" alt="带购图片" class="item-img">
-        <div class="item-info">
-            <p class="title">{{ item.title }}</p>
-            <p class="price-wrap">
-                <span class="price-label">求带价:</span>
-                <span class="price">{{item.price | parseInt}}元</span>
-            </p>
-            <p class="info-wrap">
-                <span class="label address">购入地: {{item.location | parseLocation}}</span>
-                <span class="label">截止日期: {{item.closing_date|parseDate}}</span>
-            </p>
-            <div class="button">立即带购</div>
-        </div>
+        <slot>
+            <div class="item-info">
+                <p class="title">
+                    {{ item.title }}
+                </p>
+                <p class="price-wrap">
+                    <span class="price-label">求带价:</span>
+                    <span class="price">{{item.price | parseInt}}元</span>
+                </p>
+                <p class="info-wrap">
+                    <span class="label address">购入地: {{item.location | parseLocation}}</span>
+                    <span class="label">截止日期: {{item.closing_date|parseDate}}</span>
+                </p>
+                <div class="button">立即带购</div>
+            </div>
+        </slot>
+
     </div>
 </template>
 <script>
@@ -29,7 +34,6 @@ export default {
             return config[val];
         },
         parseInt(val){
-            console.log(val);
             return +val / 100;
         },
         parseDate(val){

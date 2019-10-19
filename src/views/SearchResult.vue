@@ -31,7 +31,6 @@ export default {
         QiudaiItem,
     },
     created() {
-        console.log(this.$route.params);
         this.search(this.searchTxt);
 
     },
