@@ -68,25 +68,8 @@ export default {
             }
         },
         confirm(id){
-            let that = this;
-            ajax({
-                url: `//47.92.121.225:8080/seller/update_order_status`,
-                data: {
-                    id: this.id,
-                    status: '1',
-                },
-                xhrFields: {
-                    withCredentials: false,
-                },
-                success(res){
-                    if(res.success) {
-                        that.$router.push({
-                            name: 'buyList',
-                        });
-                    }
-                },
-                error: () => {
-                },
+            this.$router.push({
+                name: 'buyList',
             });
         },
         goBack() {

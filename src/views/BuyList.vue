@@ -96,7 +96,7 @@ export default {
       ajax({
         url: `//47.92.121.225:8080/seller/update_order_status`,
         data: {
-          id: this.nowItem.id,
+          id: this.nowItem.oid,
           status: '2',
         },
         xhrFields: {

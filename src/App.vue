@@ -13,4 +13,7 @@
   text-align: center;
   color: #2c3e50;
 }
+.cube-tab_active {
+  color: #8032F5;
+}
 </style>

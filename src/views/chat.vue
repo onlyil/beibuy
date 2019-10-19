@@ -5,12 +5,12 @@
       <span>一号运维</span>
     </div>
     <div class="content">
-      <div class="goods">
-        <img :src="goodsInfo.pic" alt="" class="pic">
+      <div class="goods" v-if="showGoods">
+        <img :src="goodsInfo.pic || pic" alt="" class="pic">
         <div class="right">
           <div class="title">{{goodsInfo.title}}</div>
           <div class="flex-between">
-            <p>求带价：{{goodsInfo.price}}</p>
+            <p>求带价：{{goodsInfo.price || 100}}</p>
             <div class="btn flex-center" @click="goBuyConfirm"><span>立即抢单</span></div>
           </div>
         </div>
@@ -51,7 +51,9 @@ export default {
   props: ["id"],
   data() {
     return {
+      showGoods: false,
       goodsInfo: {},
+      pic: 'http://h0.hucdn.com/open201942/eb3512657c6fd2b7_251x201.jpeg',
       text: "",
       messages: [
         {
@@ -83,6 +85,10 @@ export default {
         },
         success(res) {
           if (res.success) {
+            if (!res.data.length) {
+              return
+            }
+            self.showGoods = true
             self.goodsInfo = res.data[0]
           }
         },
@@ -90,12 +96,29 @@ export default {
       });
     },
     goBuyConfirm() {
-      this.$router.push({
-        name: 'buyConfirm',
-        params: {
-          id: this.id,
+      const self = this
+      ajax({
+        url: `//47.92.121.225:8080/seller/accept_needs`,
+        data: {
+          uid: this.goodsInfo.uid,
+          did: this.goodsInfo.id,
+          sid: 2,
         },
-      })
+        xhrFields: {
+          withCredentials: false
+        },
+        success(res) {
+          if (res.success) {
+            self.$router.push({
+              name: 'buyConfirm',
+              params: {
+                id: self.goodsInfo.id,
+              },
+            })
+          }
+        },
+        error: () => {}
+      });
     },
     sendMsg() {
       if (this.text) {
