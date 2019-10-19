@@ -56,7 +56,7 @@ export default {
       ajax({
         url: `//47.92.121.225:8080/seller/get_my_order`,
         data: {
-          uid: 6,
+          uid: 2,
         },
         xhrFields: {
           withCredentials: false,

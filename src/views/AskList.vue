@@ -37,7 +37,7 @@ export default {
       ajax({
         url: `//47.92.121.225:8080/needs/get_myneeds`,
         data: {
-          uid: 1,
+          uid: 2,
         },
         xhrFields: {
           withCredentials: false,

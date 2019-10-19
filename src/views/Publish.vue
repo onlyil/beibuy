@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       form : {
-        uid: 1,
+        uid: 2,
         title: '求带海蓝之谜',
         location: '美国',
         spec: 'AL001',
@@ -71,10 +71,10 @@ export default {
         closingDate: '',
         price: '100',
         des: '求带海蓝之谜',
-        pic: 'http://h0.hucdn.com/open201942/f352951846e00f65_225x225.jpeg',
+        pic: 'http://h0.hucdn.com/open201942/eb3512657c6fd2b7_251x201.jpeg',
       },
       imgs: [
-        'http://h0.hucdn.com/open201942/f352951846e00f65_225x225.jpeg',
+        'http://h0.hucdn.com/open201942/eb3512657c6fd2b7_251x201.jpeg',
       ],
     }
   },
@@ -111,7 +111,7 @@ export default {
                 time: 1500,
                 txt: '提交成功',
                 onTimeout: () => {
-                  self.$router.push({
+                  self.$router.replace({
                     name: 'askList',
                   })
                 },
@@ -174,7 +174,7 @@ export default {
   width: 100%;
   height: 80/@b;
   margin-top: 30/@b;
-  background: #FF1940;
+  background: #8032F5;;
   color: #fff;
 }
 </style>
