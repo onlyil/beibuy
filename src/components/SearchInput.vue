@@ -7,17 +7,17 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            searchText: 'aa',
-        }
-    },
+    props: ['searchText'],
+    // data() {
+    //     return {
+    //         searchText: '',
+    //     }
+    // },
     methods: {
         search() {
             this.$emit('search', this.searchText);
         }
-    }
-
+    },
 }
 </script>
 <style lang="less" scoped>

@@ -94,7 +94,10 @@ export default {
 <style lang="less">
 @import "../../style/common.less";
 @b: 46.875rem;
-
+html,
+body {
+    height: 100%;
+}
 .home {
   padding-bottom: 100px;
   background: #f2f2f2;

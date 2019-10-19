@@ -1,26 +1,51 @@
 <template>
-    <div class="item-wrap">
-        <img src="http://h0.hucdn.com/open201942/1b604aee24eaf622_794x408.png" alt="带购图片" class="item-img">
+    <div class="item-wrap" @click="clickBtn">
+        <img :src="item.pic" alt="带购图片" class="item-img">
         <div class="item-info">
-            <p class="title">SK-II 护肤精华露(神仙水®)求带，只要日本专柜</p>
+            <p class="title">{{ item.title }}</p>
             <p class="price-wrap">
                 <span class="price-label">求带价:</span>
-                <span class="price">1500元</span>
+                <span class="price">{{item.price | parseInt}}元</span>
             </p>
             <p class="info-wrap">
-                <span class="label address">购入地: 日本</span>
-                <span class="label">截止日期: 2019-11-11</span>
+                <span class="label address">购入地: {{item.location | parseLocation}}</span>
+                <span class="label">截止日期: {{item.closing_date|parseDate}}</span>
             </p>
             <div class="button">立即带购</div>
         </div>
     </div>
 </template>
 <script>
+import dayjs from 'dayjs';
+const config = {
+    '1': '日本',
+    '2': '奥地利',
+}
 export default {
     name: 'QiudaiItem',
+    props: ['item'],
+    filters: {
+        parseLocation(val) {
+            return config[val];
+        },
+        parseInt(val){
+            console.log(val);
+            return +val / 100;
+        },
+        parseDate(val){
+            return dayjs(val*1000).format('YYYY-MM-DD');
+        },
+
+    },
+    methods:{
+        clickBtn() {
+            this.$emit('goTarget');
+        }
+    }
+
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @base: 46.875rem;
 @mainColor: #8032F5;
 p {
