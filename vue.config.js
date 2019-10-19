@@ -9,8 +9,8 @@ module.exports = {
   },
   pluginOptions: {
     'cube-ui': {
-      postCompile: false,
-      theme: false
+      postCompile: true,
+      theme: true
     }
   }
 }
