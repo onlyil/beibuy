@@ -70,7 +70,8 @@ export default {
 @b: 46.875rem;
 
 .home {
-  padding-bottom: 100/@b;
+  padding-bottom: 100px;
+  background: #f2f2f2;
 }
 .tab-bar {
   display: flex;

@@ -72,6 +72,12 @@ const routes = [
     name: 'askList',
     component: () => import(/* webpackChunkName: "askList" */ '../views/AskList.vue')
   },
+  // 搜索结果页
+  {
+    path: '/searchResult',
+    name: 'searchResult',
+    component: () => import(/* webpackChunkName: "buyList" */ '../views/SearchResult.vue')
+  },
 ]
 
 const router = new VueRouter({
