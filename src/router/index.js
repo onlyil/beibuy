@@ -44,13 +44,13 @@ const routes = [
   },
   // 求带详情页
   {
-    path: '/askDetail',
+    path: '/askDetail/:id',
     name: 'askDetail',
     component: () => import(/* webpackChunkName: "askDetail" */ '../views/AskDetail.vue')
   },
   // 沟通页
   {
-    path: '/chat',
+    path: '/chat/:id',
     name: 'chat',
     component: () => import(/* webpackChunkName: "chat" */ '../views/Chat.vue')
   },
@@ -74,7 +74,7 @@ const routes = [
   },
   // 搜索结果页
   {
-    path: '/searchResult',
+    path: '/searchResult/:search',
     name: 'searchResult',
     component: () => import(/* webpackChunkName: "buyList" */ '../views/SearchResult.vue')
   },
