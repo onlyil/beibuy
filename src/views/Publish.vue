@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       form : {
-        uid: 1,
+        uid: 2,
         title: '求带海蓝之谜',
         location: '美国',
         spec: 'AL001',
@@ -111,7 +111,7 @@ export default {
                 time: 1500,
                 txt: '提交成功',
                 onTimeout: () => {
-                  self.$router.push({
+                  self.$router.replace({
                     name: 'askList',
                   })
                 },
@@ -174,7 +174,7 @@ export default {
   width: 100%;
   height: 80/@b;
   margin-top: 30/@b;
-  background: #FF1940;
+  background: #8032F5;;
   color: #fff;
 }
 </style>
