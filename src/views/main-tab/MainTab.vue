@@ -53,6 +53,7 @@ export default {
 <style lang="less">
 .home {
   padding-bottom: 47px;
+  background: #f2f2f2;
 }
 .tab {
   position: fixed;
