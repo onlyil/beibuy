@@ -45,6 +45,10 @@
         </div>
       </div>
     </div>
+
+    <div class="submit-btn">
+
+    </div>
   </div>
 </template>
 
@@ -64,20 +68,19 @@ export default {
     }
   },
   methods: {
-    // selectDate() {
-    //   if (!this.datePicker) {
-    //     this.datePicker = this.$createDatePicker({
-    //       title: 'Date Picker',
-    //       min: new Date(2008, 7, 8),
-    //       max: new Date(2020, 9, 20),
-    //       value: new Date(),
-    //       onSelect: this.selectHandle,
-    //       onCancel: this.cancelHandle
-    //     })
-    //   }
-    //   this.datePicker.show()
-    // },
-    selectDate() {},
+    selectDate() {
+      if (!this.datePicker) {
+        this.datePicker = this.$createDatePicker({
+          title: 'Date Picker',
+          min: new Date(2008, 7, 8),
+          max: new Date(2020, 9, 20),
+          value: new Date(),
+          onSelect: this.selectHandle,
+          onCancel: this.cancelHandle
+        })
+      }
+      this.datePicker.show()
+    },
     addPic() {
       
     },
@@ -126,6 +129,9 @@ export default {
       }
     }
   }
+}
+.submit-btn {
+  
 }
 
 // .form-item >>> .cube-switch .cube-switch-input {
