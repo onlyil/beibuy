@@ -130,7 +130,7 @@ export default {
     }
     .price {
       margin-top: 30/@b;
-      color: #FF1940;
+      color: #8032F5;
     }
     .btn-box {
       margin-top: 40/@b;
@@ -144,7 +144,7 @@ export default {
         color: #fff;
         border-radius: 8/@b;
         &.enable {
-          background: #FF1940;
+          background: #8032F5;
         }
       }
     }
@@ -182,7 +182,7 @@ export default {
         border-radius: 8/@b;
         color: #fff;
         &.confirm-btn {
-          background: #FF1940;
+          background: #8032F5;
         }
         &.cancel-btn {
           background: #bbb;

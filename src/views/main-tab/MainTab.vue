@@ -2,14 +2,14 @@
   <div class="home">
     <router-view/>
 
-    <!-- <cube-tab-bar
+    <cube-tab-bar
       class="tab"
       v-model="selectedTab"
       :data="tabs"
       @change="changeHandler">
-    </cube-tab-bar> -->
+    </cube-tab-bar>
 
-    <div class="tab-bar">
+    <!-- <div class="tab-bar">
       <div class="tab-item flex-col-center"
         v-for="(item, index) in tabs"
         :key="index"
@@ -17,7 +17,7 @@
         <span class="label">{{item.label}}</span>
         <img :src="item.icon" alt="" class="icon">
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -27,25 +27,46 @@ export default {
   data () {
     return {
       selectedTab: 'home',
+      // tabs: [{
+      //   label: '带购',
+      //   icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+      //   value: 'home',
+      // }, {
+      //   label: '好货',
+      //   icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+      //   value: 'goods',
+      // }, {
+      //   label: '发布',
+      //   icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+      //   value: 'publish',
+      // }, {
+      //   label: '消息',
+      //   icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+      //   value: 'message',
+      // }, {
+      //   label: '我的',
+      //   icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+      //   value: 'personal',
+      // }]
       tabs: [{
         label: '带购',
-        icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+        icon: 'cubeic-home',
         value: 'home',
       }, {
         label: '好货',
-        icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+        icon: 'cubeic-like',
         value: 'goods',
       }, {
         label: '发布',
-        icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+        icon: 'cubeic-add',
         value: 'publish',
       }, {
         label: '消息',
-        icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+        icon: 'cubeic-message',
         value: 'message',
       }, {
         label: '我的',
-        icon: 'http://h0.hucdn.com/open201942/48a4655cd0f09f91_32x32.png',
+        icon: 'cubeic-person',
         value: 'personal',
       }]
     }
@@ -60,6 +81,11 @@ export default {
         name: item.value,
       })
     },
+    changeHandler(val) {
+      this.$router.push({
+        name: val,
+      })
+    },
   },
   components: {},
 }
@@ -72,6 +98,14 @@ export default {
 .home {
   padding-bottom: 100px;
   background: #f2f2f2;
+}
+.tab {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 30/@b;
+  background: #fff;
 }
 .tab-bar {
   display: flex;
