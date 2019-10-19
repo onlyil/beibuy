@@ -52,11 +52,13 @@ export default {
         label: '带购',
         icon: 'cubeic-home',
         value: 'home',
-      }, {
-        label: '好货',
-        icon: 'cubeic-like',
-        value: 'goods',
-      }, {
+      },
+      // {
+      //   label: '好货',
+      //   icon: 'cubeic-like',
+      //   value: 'goods',
+      // },
+      {
         label: '发布',
         icon: 'cubeic-add',
         value: 'publish',
