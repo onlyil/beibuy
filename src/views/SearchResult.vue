@@ -44,7 +44,7 @@ export default {
         search(value) {
             let that = this;
             this.searchTxt = value;
-            let location = config[this.searchTxt] || '1';
+            let location = this.searchTxt;
             ajax({
                 url: `//47.92.121.225:8080/needs/search`,
                 data: {

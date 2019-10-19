@@ -1,6 +1,9 @@
 <template>
     <div v-if="item" class="item-wrap" @click="clickBtn">
-        <img :src="item.pic" alt="带购图片" class="item-img">
+        <div class="img-wrap">
+            <img :src="item.pic" alt="带购图片" class="item-img">
+            <img :src="item.icon" alt="" class="country-icon">
+        </div>
         <slot>
             <div class="item-info">
                 <p class="title">
@@ -11,7 +14,6 @@
                     <span class="price">{{item.price | parseInt}}元</span>
                 </p>
                 <p class="info-wrap">
-                    <span class="label address">购入地: {{item.location | parseLocation}}</span>
                     <span class="label">截止日期: {{item.closing_date|parseDate}}</span>
                 </p>
                 <div class="button">立即带购</div>
@@ -62,14 +64,23 @@ p {
     background: #fff;
     border-radius: 12/@base;
 }
+.img-wrap {
+    position: relative;
+}
+.country-icon {
+    position: absolute;
+    left: 24/@base;
+    top: 24/@base;
+    width: 64/@base;
+    height: 64/@base;
+}
 .item-img {
     width: 702/@base;
 }
 .title {
     margin-bottom: 12/@base;
-    font-size: 28/@base;
-    line-height: 32/@base;
-    height: 64/@base;
+    font-size: 36/@base;
+    line-height: 42/@base;
     font-weight: bold;
     text-align: left;
 }
@@ -77,10 +88,15 @@ p {
     position: relative;
     padding: 24/@base;
 }
-.price-wrap,
+.price-wrap {
+    font-size: 32/@base;
+    line-height: 40/@base;
+    margin-bottom: 12/@base;
+}
 .info-wrap {
     margin-bottom: 8/@base;
-    font-size: 24/@base;
+    font-size: 32/@base;
+    line-height: 40/@base;
 }
 .price-label,
 .label {
@@ -93,12 +109,12 @@ p {
     position: absolute;
     bottom: 24/@base;
     right: 24/@base;
-    width: 152/@base;
-    line-height: 48/@base;
+    width: 180/@base;
+    line-height: 64/@base;
     background: @mainColor;
     color: #fff;
     border-radius: 6/@base;
-    font-size: 24/@base;
+    font-size: 28/@base;
 }
 .address {
     margin-right: 20/@base;

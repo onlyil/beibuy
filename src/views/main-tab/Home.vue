@@ -86,11 +86,11 @@ export default {
                 }
             });
         },
-        search() {
+        search(text) {
             this.$router.push({
                 name: 'searchResult',
                 params: {
-                    search: this.searchTxt,
+                    search: text,
                 }
             });
         },
