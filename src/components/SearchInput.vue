@@ -1,21 +1,25 @@
 <template>
     <div class="container">
-        <div class="back-icon"></div>
-        <input v-model="searchText" type="text">
+        <slot></slot>
+        <div class="back-icon" @click="back"></div>
+        <input v-model="text" type="text">
         <div class="search-btn" @click="search">搜索</div>
     </div>
 </template>
 <script>
 export default {
     props: ['searchText'],
-    // data() {
-    //     return {
-    //         searchText: '',
-    //     }
-    // },
+    data() {
+        return {
+            text: this.searchText,
+        }
+    },
     methods: {
         search() {
-            this.$emit('search', this.searchText);
+            this.$emit('search', this.text);
+        },
+        back() {
+            this.$emit('back');
         }
     },
 }
@@ -30,6 +34,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: #fff;
 }
 .back-icon {
     width: 66/@base;

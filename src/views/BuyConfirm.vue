@@ -39,7 +39,7 @@ export default {
     },
     filters:{
         parsePrice(val) {
-            return +val / 100;
+            return +val;
         }
     },
     methods:{

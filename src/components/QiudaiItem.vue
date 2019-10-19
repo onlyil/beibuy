@@ -1,5 +1,5 @@
 <template>
-    <div class="item-wrap" @click="clickBtn">
+    <div v-if="item" class="item-wrap" @click="clickBtn">
         <img :src="item.pic" alt="带购图片" class="item-img">
         <slot>
             <div class="item-info">
@@ -34,7 +34,7 @@ export default {
             return config[val];
         },
         parseInt(val){
-            return +val / 100;
+            return +val;
         },
         parseDate(val){
             return dayjs(val*1000).format('YYYY-MM-DD');

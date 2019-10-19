@@ -10,7 +10,7 @@
         </div>
         <div class="item">
             <span class="label">购买地</span>
-            <span class="value">{{item.location | parseLocation}}</span>
+            <span class="value">{{item.location}}</span>
         </div>
         <div class="item">
             <span class="label">购入渠道</span>
@@ -28,11 +28,6 @@
             <span class="label">截止日期</span>
             <span class="value">{{item.closing_date|parseDate}}</span>
         </div>
-        <div class="item">
-            <span class="label">求带商品</span>
-            <span class="value">SKII护肤精华露</span>
-        </div>
-
     </div>
 </template>
 <script>
@@ -43,7 +38,7 @@ export default {
     props: ['item'],
     filters: {
         parseInt(val){
-            return +val / 100;
+            return +val;
         },
         parseLocation(val) {
             return config.locationConfig[val];
