@@ -2,7 +2,9 @@
     <div class="item-wrap" @click="clickBtn">
         <img :src="item.pic" alt="带购图片" class="item-img">
         <div class="item-info">
-            <p class="title">{{ item.title }}</p>
+            <p class="title">
+                {{ item.title }}
+            </p>
             <p class="price-wrap">
                 <span class="price-label">求带价:</span>
                 <span class="price">{{item.price | parseInt}}元</span>
@@ -29,7 +31,6 @@ export default {
             return config[val];
         },
         parseInt(val){
-            console.log(val);
             return +val / 100;
         },
         parseDate(val){
