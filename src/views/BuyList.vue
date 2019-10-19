@@ -9,7 +9,7 @@
           <div class="btn-box flex-between">
             <div class="receiver">{{item.user.name}}</div>
             <div class="status-btn" :class="{enable: item.status == '1'}" @click="send(item)">
-              <span>我要发货</span>
+              <span>{{item.stausDesc}}</span>
             </div>
           </div>
         </div>
@@ -77,6 +77,9 @@ export default {
       });
     },
     send(item) {
+      if (item.status == '2') {
+        return
+      }
       this.showDialog = true
       this.nowItem = item
     },
@@ -130,7 +133,7 @@ export default {
     }
     .price {
       margin-top: 30/@b;
-      color: #8032F5;
+      color: #ff1940;
     }
     .btn-box {
       margin-top: 40/@b;

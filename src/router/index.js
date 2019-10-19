@@ -52,12 +52,14 @@ const routes = [
   {
     path: '/chat/:id',
     name: 'chat',
+    props: true,
     component: () => import(/* webpackChunkName: "chat" */ '../views/Chat.vue')
   },
   // 带购确认页
   {
-    path: '/buyConfirm',
+    path: '/buyConfirm/:id',
     name: 'buyConfirm',
+    props: true,
     component: () => import(/* webpackChunkName: "buyConfirm" */ '../views/BuyConfirm.vue')
   },
   // 带购清单

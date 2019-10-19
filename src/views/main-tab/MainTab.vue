@@ -96,10 +96,11 @@ export default {
 @b: 46.875rem;
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 .home {
-  padding-bottom: 100px;
+  min-height: 100%;
+  padding-bottom: 100/@b;
   background: #f2f2f2;
 }
 .tab {
@@ -107,8 +108,13 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100/@b;
   font-size: 30/@b;
   background: #fff;
+  border-top: 1/@b solid #f2f2f2;
+  i {
+    font-size: 40/@b;
+  }
 }
 .tab-bar {
   display: flex;
