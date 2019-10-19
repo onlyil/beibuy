@@ -59,9 +59,7 @@ export default {
 .wrap {
     background-color: #fff;
 }
-.spec {
-    color: #E31436;
-}
+
 .item {
     display: flex;
     flex-direction: row;
@@ -78,6 +76,9 @@ export default {
     .value {
         padding-right: 24/@base;
         color: #333;
+    }
+    .spec {
+        color: #E31436;
     }
     border-bottom: 1px solid rgba(0,0,0,.2);
 }

@@ -56,7 +56,7 @@ const routes = [
   },
   // 带购确认页
   {
-    path: '/buyConfirm',
+    path: '/buyConfirm/:id',
     name: 'buyConfirm',
     component: () => import(/* webpackChunkName: "buyConfirm" */ '../views/BuyConfirm.vue')
   },

@@ -9,7 +9,7 @@
           <div class="btn-box flex-between">
             <div class="receiver">{{item.user.name}}</div>
             <div class="status-btn" :class="{enable: item.status == '1'}" @click="send(item)">
-              <span>我要发货</span>
+              <span>{{item.stausDesc}}</span>
             </div>
           </div>
         </div>
@@ -77,8 +77,10 @@ export default {
       });
     },
     send(item) {
-      this.showDialog = true
-      this.nowItem = item
+        if(item.status === '1') {
+            this.showDialog = true
+            this.nowItem = item
+        }
     },
     confirm() {
       const self = this
@@ -93,7 +95,7 @@ export default {
         },
         success(res){
           if (res.success) {
-            this.showDialog = false
+            self.showDialog = false
             self.getList()
           }
         },
