@@ -1,6 +1,6 @@
 <template>
   <div>
-        <search-input :searchText="searchTxt" @search="search"></search-input>
+        <search-input :searchText="searchTxt" @search="search" @back="back"></search-input>
         <div
             v-if="list && list.length"
             class="item-list"
@@ -72,6 +72,9 @@ export default {
                     id: id
                 }
             });
+        },
+        back() {
+            this.$router.go(-1);
         }
     }
 }

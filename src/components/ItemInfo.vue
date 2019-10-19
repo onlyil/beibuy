@@ -43,7 +43,7 @@ export default {
     props: ['item'],
     filters: {
         parseInt(val){
-            return +val / 100;
+            return +val;
         },
         parseLocation(val) {
             return config.locationConfig[val];
