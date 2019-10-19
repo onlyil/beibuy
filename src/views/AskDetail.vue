@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1 class="title">{{item.title}}</h1>
+      <div class="title">
+        <div class="back" @click="goBack"></div>
+        <h1 class="title">{{item.title}}</h1>
+      </div>
     <div class="user-wrap">
         <div class="user-info">
             <img :src="item.avatar" alt="头像" class="user-avatar">
@@ -79,6 +82,9 @@ export default {
                 }
             });
         },
+        goBack() {
+            this.$router.go(-1)
+        },
     }
 }
 </script>
@@ -89,10 +95,20 @@ export default {
 
 .title {
     padding: 12/@base 24/@base;
+    padding-left: 40/@base;
     line-height: 64/@base;
-    font-size: 46/@base;
+    font-size: 40/@base;
     background-color: #fff;
     text-align: left;
+    .back {
+        position: absolute;
+        left: 24/@base;
+        top: 20/@base;
+        width: 64/@base;
+        height: 64/@base;
+        background: url(http://h0.hucdn.com/open201942/f90c9b99af03f8ee_200x200.png) left center no-repeat;
+        background-size: 100% 100%;
+    }
 }
 .detail {
     // background: #f2f2f2;

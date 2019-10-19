@@ -1,5 +1,9 @@
 <template>
   <div class="page-container">
+    <div class="title-wrap">
+      <div class="back" @click="goBack"></div>
+      <p class="page-title">正在带购</p>
+    </div>
     <div class="ask-list">
       <div class="item" v-for="(item, index) in list" :key="index">
         <img :src="item.pic" alt="" class="pic">
@@ -107,6 +111,9 @@ export default {
         error: () => {},
       });
     },
+    goBack() {
+      this.$router.go(-1)
+    },
   },
 }
 </script>
@@ -115,9 +122,29 @@ export default {
 @import "../style/common.less";
 
 .page-container {
+  padding-top: 88/@b;
   height: 100vh;
   font-size: 28/@b;
   background: #f2f4f6;
+}
+.title-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    line-height: 88/@b;
+    font-size: 40/@b;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    .back {
+        position: absolute;
+        left: 24/@b;
+        top: 12/@b;
+        width: 64/@b;
+        height: 64/@b;
+        background: url(http://h0.hucdn.com/open201942/f90c9b99af03f8ee_200x200.png) left center no-repeat;
+        background-size: 100% 100%;
+    }
 }
 .ask-list {
   .item {

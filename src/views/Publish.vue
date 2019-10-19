@@ -1,5 +1,9 @@
 <template>
   <div class="page-container">
+    <div class="title-wrap">
+        <div class="back" @click="goBack"></div>
+        <p class="page-title">发布求带信息</p>
+    </div>
     <div class="form-item flex-between">
       <div class="label">标题</div>
       <input class="val" type="text" v-model="form.title" placeholder="请输入标题">
@@ -121,6 +125,9 @@ export default {
         error: () => {},
       });
     },
+    goBack() {
+      this.$router.go(-1)
+    },
   },
 }
 </script>
@@ -128,9 +135,29 @@ export default {
 <style lang="less" scoped>
 @import "../style/common.less";
 
+.title-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    line-height: 88/@b;
+    font-size: 40/@b;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    .back {
+        position: absolute;
+        left: 24/@b;
+        top: 12/@b;
+        width: 64/@b;
+        height: 64/@b;
+        background: url(http://h0.hucdn.com/open201942/f90c9b99af03f8ee_200x200.png) left center no-repeat;
+        background-size: 100% 100%;
+    }
+}
 .page-container {
   font-size: 28/@b;
   padding: 0 24/@b;
+  padding-top: 88/@b;
   .form-item {
     padding: 10/@b 0;
     border-bottom: 1/@b solid #eee;

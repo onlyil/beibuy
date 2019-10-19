@@ -1,6 +1,7 @@
 <template>
   <div class="page-container">
     <div class="header flex-center">
+      <div class="back" @click="goBack"></div>
       <span>一号运维</span>
     </div>
     <div class="content">
@@ -105,7 +106,10 @@ export default {
         });
         this.text = "";
       }
-    }
+    },
+    goBack() {
+      this.$router.go(-1)
+    },
   }
 };
 </script>
@@ -125,6 +129,15 @@ export default {
   height: 100 / @b;
   font-size: 32 / @b;
   border-bottom: 1/@b solid #f2f4f6;
+  .back {
+    position: absolute;
+    left: 24/@b;
+    top: 12/@b;
+    width: 64/@b;
+    height: 64/@b;
+    background: url(http://h0.hucdn.com/open201942/f90c9b99af03f8ee_200x200.png) left center no-repeat;
+    background-size: 100% 100%;
+  }
 }
 .content {
   flex: 1;
