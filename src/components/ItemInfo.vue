@@ -10,7 +10,7 @@
         </div>
         <div class="item">
             <span class="label">购买地</span>
-            <span class="value">{{item.location | parseLocation}}</span>
+            <span class="value">{{item.location}}</span>
         </div>
         <div class="item">
             <span class="label">购入渠道</span>
