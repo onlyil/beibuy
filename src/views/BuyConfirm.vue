@@ -1,8 +1,7 @@
 <template>
     <div class="home">
         <div class="title-wrap">
-            <div class="back">
-            </div>
+            <div class="back" @click="goBack"></div>
             <p class="page-title">确认带货信息</p>
         </div>
         <qiudai-item :item="item">
@@ -89,7 +88,10 @@ export default {
                 error: () => {
                 },
             });
-        }
+        },
+        goBack() {
+            this.$router.go(-1)
+        },
     }
 }
 </script>
