@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <h1 class="title">{{item.title}}</h1>
     <div class="user-wrap">
         <div class="user-info">
@@ -86,7 +86,9 @@ export default {
 <style lang="less" scoped>
 @base: 46.875rem;
 @mainColor: #8032F5;
-
+.wrap {
+    padding-bottom: 128/@base;
+}
 .title {
     padding: 12/@base 24/@base;
     line-height: 64/@base;

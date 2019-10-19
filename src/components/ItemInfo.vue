@@ -28,11 +28,6 @@
             <span class="label">截止日期</span>
             <span class="value">{{item.closing_date|parseDate}}</span>
         </div>
-        <div class="item">
-            <span class="label">求带商品</span>
-            <span class="value">SKII护肤精华露</span>
-        </div>
-
     </div>
 </template>
 <script>
