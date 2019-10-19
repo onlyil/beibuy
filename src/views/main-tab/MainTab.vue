@@ -25,6 +25,10 @@ export default {
         icon: 'cubeic-like',
         value: 'goods',
       }, {
+        label: '发布',
+        icon: 'cubeic-add',
+        value: 'publish',
+      }, {
         label: '消息',
         icon: 'cubeic-message',
         value: 'message',

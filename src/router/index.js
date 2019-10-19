@@ -36,6 +36,12 @@ const routes = [
       },
     ],
   },
+  // 发布页
+  {
+    path: '/publish',
+    name: 'publish',
+    component: () => import(/* webpackChunkName: "publish" */ '../views/Publish.vue')
+  },
   // 求带详情页
   {
     path: '/askDetail',
@@ -46,7 +52,7 @@ const routes = [
   {
     path: '/chat',
     name: 'chat',
-    component: () => import(/* webpackChunkName: "chat" */ '../views/chat.vue')
+    component: () => import(/* webpackChunkName: "chat" */ '../views/Chat.vue')
   },
   // 带购确认页
   {
