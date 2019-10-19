@@ -7,7 +7,6 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@fe-base/ajax": "^2.10.1",
     "@fe-base/file": "^0.4.5",
     "axios": "^0.19.0",
     "core-js": "^3.1.2",
