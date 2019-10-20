@@ -1,19 +1,19 @@
 <template>
   <div class="page-container">
     <div class="banner flex-col-center">
-      <img src="//h0.hucdn.com/open201918/0ab49db2491da2c2_180x180.png" alt="" class="avatar">
-      <div class="nick">第一运维</div>
+      <img :src="userInfo.avatar" alt="" class="avatar">
+      <div class="nick">{{userInfo.name}}</div>
       <div class="info">
         <div class="info-item">
-          <p>1000</p>
+          <p>{{userInfo.credit}}</p>
           <p class="label">信誉度</p>
         </div>
         <div class="info-item">
-          <p>1000</p>
+          <p>{{userInfo.good}}</p>
           <p class="label">赞</p>
         </div>
         <div class="info-item">
-          <p>1000</p>
+          <p>{{userInfo.fans}}</p>
           <p class="label">粉丝</p>
         </div>
       </div>
@@ -23,7 +23,10 @@
       <div class="section-list">
         <div class="section-item flex-between" @click="goAskList">
           <div class="label">正在求带</div>
-          <img src="http://h0.hucdn.com/open201939/2af3504c1455b4e0_36x36.png" alt="" class="icon-arrow">
+          <div class="flex-center light">
+            <span>{{userInfo.needs_num}}</span>
+            <img src="http://h0.hucdn.com/open201939/2af3504c1455b4e0_36x36.png" alt="" class="icon-arrow">
+          </div>
         </div>
         <div class="section-item flex-between">
           <div class="label">历史求带</div>
@@ -34,7 +37,10 @@
       <div class="section-list">
         <div class="section-item flex-between" @click="goBuyList">
           <div class="label">正在带购</div>
-          <img src="http://h0.hucdn.com/open201939/2af3504c1455b4e0_36x36.png" alt="" class="icon-arrow">
+          <div class="flex-center light">
+            <span>{{userInfo.order_num}}</span>
+            <img src="http://h0.hucdn.com/open201939/2af3504c1455b4e0_36x36.png" alt="" class="icon-arrow">
+          </div>
         </div>
         <div class="section-item flex-between">
           <div class="label">历史带购</div>
@@ -57,13 +63,37 @@
 </template>
 
 <script>
+import {ajax} from '@fe-base/ajax'
 
 export default {
   name: 'personal',
   data() {
-    return {}
+    return {
+      userInfo: {},
+    }
+  },
+  created() {
+    this.getUserInfo()
   },
   methods: {
+    getUserInfo() {
+      const self = this
+      ajax({
+        url: `//47.92.121.225:8080/user/get_user_info`,
+        data: {
+          uid: 2,
+        },
+        xhrFields: {
+          withCredentials: false,
+        },
+        success(res){
+          if (res.success) {
+            self.userInfo = res.data
+          }
+        },
+        error: () => {},
+      });
+    },
     goAskList() {
       this.$router.push({
         name: 'askList',
@@ -88,9 +118,9 @@ export default {
 .banner {
   width: 100%;
   height: 400/@b;
-  // background: url() no-repeat;
-  background-image: linear-gradient(90deg, #FF335C 0%, #FF1940 100%);
-  background-size: contain;
+  background: url(http://h0.hucdn.com/open201942/9cf1fa2c112479a7_750x636.png) no-repeat;
+  background-size: cover;
+  // background-image: linear-gradient(90deg, #FF335C 0%, #FF1940 100%);
   color: #fff;
   .avatar {
     width: 120/@b;
@@ -126,5 +156,8 @@ export default {
       height: 36/@b;
     }
   }
+}
+.light {
+  color: #999;
 }
 </style>

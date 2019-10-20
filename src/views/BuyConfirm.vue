@@ -68,9 +68,16 @@ export default {
             }
         },
         confirm(id){
-            this.$router.push({
-                name: 'buyList',
-            });
+            this.$createToast({
+                time: 1000,
+                txt: '接单成功！',
+                type: 'txt',
+                onTimeout: () => {
+                    this.$router.push({
+                        name: 'buyList',
+                    })
+                }
+            }).show()
         },
         goBack() {
             this.$router.go(-1)

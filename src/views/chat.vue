@@ -115,6 +115,12 @@ export default {
                 id: self.goodsInfo.id,
               },
             })
+          } else {
+            self.$createToast({
+              txt: res.message,
+              type: 'txt'
+            }).show()
+            return
           }
         },
         error: () => {}

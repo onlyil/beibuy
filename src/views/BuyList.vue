@@ -67,7 +67,7 @@ export default {
         },
         success(res){
           if (res.success) {
-            res.data.forEach((item) => {
+            res.data.length && res.data.forEach((item) => {
               if (item.status == '1') {
                 item.stausDesc = '我要发货'
               } else {
