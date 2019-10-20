@@ -71,7 +71,7 @@ export default {
               if (item.status == '1') {
                 item.stausDesc = '我要发货'
               } else {
-                item.stausDesc = '等待确认收获'
+                item.stausDesc = '等待确认收货'
               }
             })
             self.list = res.data

@@ -72,7 +72,7 @@ export default {
         need_invoice: false,
         postage_commitment: false,
         closing_date: '',
-        closingDate: '',
+        closingDate: '2019-11-20',
         price: '100',
         des: '求带海蓝之谜',
         pic: 'http://h0.hucdn.com/open201942/eb3512657c6fd2b7_251x201.jpeg',
@@ -89,7 +89,7 @@ export default {
           title: 'Date Picker',
           min: new Date(2008, 7, 8),
           max: new Date(2020, 9, 20),
-          value: new Date(),
+          value: new Date(2019, 10, 20),
           onSelect: this.selectHandle,
         })
       }

@@ -54,7 +54,7 @@ export default {
               } else if (item.status == '1') {
                 item.statusDesc = '等待发货'
               } else {
-                item.statusDesc = '确认收获'
+                item.statusDesc = '确认收货'
               }
             })
             self.list = res.data

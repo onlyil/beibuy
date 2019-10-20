@@ -91,7 +91,7 @@ export default {
 @mainColor: #8032F5;
 .home {
     padding-top: 100/@base;
-    height: 1500/@base;
+    padding-bottom: 100/@base;
 }
 .title-wrap {
     position: fixed;
@@ -102,6 +102,7 @@ export default {
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid rgba(0,0,0,.2);
+    z-index: 1;
     .back {
         position: absolute;
         left: 24/@base;
@@ -130,10 +131,10 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 128/@base;
+    height: 100/@base;
     width: 750/@base;
-    line-height: 128/@base;
-    font-size: 48/@base;
+    line-height: 100/@base;
+    font-size: 36/@base;
     color: #fff;
     font-weight: bold;
     background-color: @mainColor;

@@ -108,7 +108,7 @@ export default {
     .back {
         position: absolute;
         left: 24/@base;
-        top: 14/@base;
+        top: 10/@base;
         width: 64/@base;
         height: 64/@base;
         background: url(http://h0.hucdn.com/open201942/f90c9b99af03f8ee_200x200.png) left center no-repeat;
