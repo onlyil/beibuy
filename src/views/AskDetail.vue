@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="page-container">
       <div class="title">
         <div class="back" @click="goBack"></div>
-        <h1 class="title">{{item.title}}</h1>
+        <h1 class="title-txt">{{item.title}}</h1>
       </div>
     <div class="user-wrap">
         <div class="user-info">
@@ -92,28 +92,31 @@ export default {
 <style lang="less" scoped>
 @base: 46.875rem;
 @mainColor: #8032F5;
+.page-container {
+    padding-bottom: 100/@base;
+}
 .wrap {
     padding-bottom: 128/@base;
 }
 .title {
     padding: 12/@base 24/@base;
-    padding-left: 40/@base;
     line-height: 64/@base;
     font-size: 40/@base;
     background-color: #fff;
     text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,.2);
     .back {
         position: absolute;
         left: 24/@base;
-        top: 20/@base;
+        top: 14/@base;
         width: 64/@base;
         height: 64/@base;
         background: url(http://h0.hucdn.com/open201942/f90c9b99af03f8ee_200x200.png) left center no-repeat;
         background-size: 100% 100%;
     }
-}
-.detail {
-    // background: #f2f2f2;
+    .title-txt {
+        margin-left: 60/@base;
+    }
 }
 .detail-info {
     padding: 24px;
@@ -129,7 +132,7 @@ export default {
     align-items: center;
     height: 88/@base;
     background-color: #fff;
-    border-bottom: 1px solid rgba(0,0,0,.4);
+    border-bottom: 1/@base solid rgba(0,0,0,.2);
 }
 .user-avatar {
     margin-right: 12/@base;
@@ -154,10 +157,10 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 128/@base;
+    height: 100/@base;
     width: 750/@base;
-    line-height: 128/@base;
-    font-size: 48/@base;
+    line-height: 100/@base;
+    font-size: 36/@base;
     color: #fff;
     font-weight: bold;
     background-color: @mainColor;
